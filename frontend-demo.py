@@ -80,7 +80,7 @@ with results:
 
 with notes2:
     st.header('Notes')
-    st.markdown('1. The displayed costs savings does not include the depreciation savings potential. Making the cost saving potential of the IGF-approach even bigger.')
+    st.markdown('1. The displayed costs and CO2 savings does not include the depreciation savings potential. Making the cost and CO2 saving potential of the IGF-approach even bigger.')
     st.markdown(
         '2. The database of this demo contains all sales, return and shipment data from May 2017 to May 2019 from a Dutch fashion retailer. As a consequence, the assumption is made that your customers have the same behaviour as their customers. For example, on how long they take to hand-in a return at a drop-off point.')
     st.markdown('3. The database does not contain the real-life reaction of consumers to the IGF way of returning and buying. This is inherent to the fact that IGF’s method is not applied in real-life yet. Still the database is fully useful, allowing us to mimic customer behaviour in our model.')
