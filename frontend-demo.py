@@ -1,5 +1,4 @@
 import streamlit as st
-import matplotlib.pyplot as plt
 
 from lookup_search import Lookup
 
