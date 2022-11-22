@@ -43,7 +43,9 @@ with variables:
     st.header('Variables')
     click = st.checkbox('Optimize for CO2 instead of costs')
     if click:
-        inleg = st.number_input(label='CO2-worth per item (euro)', value=0, max_value=5, min_value=0)
+        inleg = st.number_input(label='The additional Euro amount you are willing to pay, per article, to optimise for CO2 emission',value=0, max_value=5, min_value=0)
+        co2_korting = Lookup.demo_lookupco2_discount(inleg, select)
+        show_co2_korting = st.number_input(label='Applied discount (percentage) for CO2 optimisation',min_value=(co2_korting * 100), max_value=(co2_korting * 100))
     else:
         fixed = st.number_input(label='Applied discount (percentage)', value=7, max_value=100, min_value=1)
     window_sell = st.slider(label='Returner-buyer matching period', min_value=1, max_value=6, value=3, step=1)
@@ -53,7 +55,7 @@ with results:
     st.header('Results')
     st.markdown('Results for selected SKU given **2 month** selling period')
     if click:
-        [res_ass, res_sav, res_co2, fract_ret, discount, savings] = Lookup.demo_lookupco2(inleg, window_sell, window_del, select)
+        [res_ass, res_sav, res_co2, fract_ret, discount, savings, co2_korting] = Lookup.demo_lookupco2(inleg, window_sell, window_del, select)
     else:
         [res_ass, res_sav, res_co2, fract_ret, savings] = Lookup.demo_lookup(fixed, window_sell, window_del, select)
     txt, res, eur, co2 = st.columns(4)
